@@ -1,16 +1,14 @@
 class DocTree():
-    url = ""
-    _branches = []
-
     def __init__(self, url):
         self.url = url
+        self._branches = []
 
     def get_branches(self):
         return self._branches
 
-    def set_branches(self, branches):
-        self._branches = branches
-        print("Doc tree branches update.")
+    def set_branches(self, value):
+        self._branches = value
+        print("[Set]: Doc tree branches update.")
 
     def del_branches(self):
         self._branches = []
