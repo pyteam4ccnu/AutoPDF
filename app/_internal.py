@@ -12,7 +12,7 @@ headers={
 
 def recursive(node_now, soup_now):
     """
-
+    This function means to generate a doc tree by recursive way.
     :param node_now: the doc tree node now, please make sure be init.ed
     :param soup_now: the html soup now, please make sure is a <ul>
     :return: new_node_now.
@@ -30,6 +30,11 @@ def recursive(node_now, soup_now):
 
 
 def get_tree(url):
+    """
+    This function means to get a doc tree of python doc.
+    :param url: Python org.
+    :return:
+    """
     session = requests.Session()
     session.headers = headers
     respones = session.get(url)

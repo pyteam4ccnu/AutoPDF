@@ -6,6 +6,10 @@ Base = "https://docs.python.org/zh-cn/3/tutorial/"
 
 
 def run_app():
+    """
+    This function means to run all step of download pdf: get doc tree and download.
+    :return:
+    """
     print(" - - - Now Get Pages - - - ")
     toc = get_tree(BaseUrl)
     print("\n - - - Now Download Pages - - - ")

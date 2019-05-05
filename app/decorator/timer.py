@@ -2,6 +2,11 @@ import time
 
 
 def Timer(func):
+    """
+    This decorator means to count the time which be decorated function cost.
+    :param func: be decorated function
+    :return:
+    """
     def newFunc(*args, **args2):
         t0 = time.time()
         url = str(*args)
