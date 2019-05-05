@@ -1,8 +1,9 @@
 from .download import download_by_url
 from ._internal import get_tree
+import os
 
-BaseUrl = "https://docs.python.org/zh-cn/3/tutorial/index.html"
-Base = "https://docs.python.org/zh-cn/3/tutorial/"
+BaseUrl = os.environ.get("AutoPDF_BaseUrl") or "https://docs.python.org/zh-cn/3/tutorial/index.html"
+Base = os.environ.get("AutoPDF_Base") or "https://docs.python.org/zh-cn/3/tutorial/"
 
 
 def run_app():
