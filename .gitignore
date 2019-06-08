@@ -1,8 +1,9 @@
 *.pdf
 .sqlite
 .py.swp
-.save
-.py.save
+*.save
+*.py.save
+*.py.save.1
 .swp
 .json
 .idea/
