@@ -13,7 +13,7 @@ class Form(QDialog):
     This class is the main window we have: a simple form, made by Header, Two LineEdit and a Button. Thanks for PyQt5.
     :param QDialog: The father class from PyQt5.QtGui, means a Dialog between application and user.
     """
-    def __init__(self, run_function=None):
+    def __init__(self, run_function=None, merge_function=None):
         """
         This function is the init function of Form class, including creating components like Label, LineEdit and Button.
         :param run_function: The run_function means like as you see: just run the MAIN FUNCTION(Download the PDFs).
@@ -21,6 +21,7 @@ class Form(QDialog):
         super(Form, self).__init__()
 
         self.run_app = run_function
+        self.merge_pdf = merge_function
         self.resize(550, 350)
         self.setWindowTitle('AutoPDF -- The Solution of Python Document Download')
         # Init the main window attributions.
@@ -95,9 +96,11 @@ class Form(QDialog):
 
     def run(self):
         """
-        This function run the run_function, and then create a MessageBox.
+        This function run the run_function and merge PDFs function, and then create a MessageBox.
         :return: None
         """
         self.run_app(self.link_text, self.base_text)
+        print("Start merge PDF.")
+        self.merge_pdf()
         QMessageBox.information(self, "Successful", "Download Successful!", QMessageBox.Ok)
 
